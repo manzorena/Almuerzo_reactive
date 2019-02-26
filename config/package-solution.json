@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "almuerzo-client-side-solution",
+    "id": "432cd055-d6ac-4c5b-94a6-438926eb07c3",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/almuerzo.sppkg"
+  }
+}

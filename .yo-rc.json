@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.7.1",
+    "libraryName": "almuerzo",
+    "libraryId": "432cd055-d6ac-4c5b-94a6-438926eb07c3",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}
