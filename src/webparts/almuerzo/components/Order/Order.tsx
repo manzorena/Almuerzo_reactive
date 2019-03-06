@@ -5,7 +5,8 @@ import styles from './Order.module.scss';
 import '../Almuerzo';
 import Selector from '../Selector/Selector';
 import Selector_menu from '../Selector/Selector_menu';
-import Checkbox from '../Checkbox/Checkbox';
+import _Checkbox from '../Checkbox/Checkbox';
+import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 import Gustos from '../Gustos/Gustos';
 
 
@@ -27,19 +28,19 @@ class Order extends React.Component<{},{}> {
         return(
             <div>
                 <div id="Menu_principal">
-                <Selector_menu  menuarr={Menus}/>
+                <Selector_menu label="Menú" menuarr={Menus}/>
                 </div>
 
                 <div id="hidden">
 
                     <div id="carne">
-                        <Selector menuarr={Menus[0]["Tipo"]}/>
-                        <Selector menuarr={Menus[0]["Guarnición"]}/>
+                        <Selector label="Tipo"       menuarr={Menus[0]["Tipo"]}/>
+                        <Selector label="Guarnición" menuarr={Menus[0]["Guarnición"]}/>
                     </div>
 
                     <div id="Ensalada para armar">
-                        <Selector menuarr={Menus[1]["Gusto especial"]}/>
-                        <Gustos   gustos={Menus[1]["gustos"]}/>
+                        <Selector label="Gusto especial" menuarr={Menus[1]["Gusto especial"]}/>
+                        <Gustos  gustos={Menus[1]["Gustos"]}/>
                     </div>
                 
                 

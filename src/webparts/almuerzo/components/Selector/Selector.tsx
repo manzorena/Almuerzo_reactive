@@ -5,6 +5,7 @@ import * as React from 'react';
   class selector extends React.Component<
     {
         menuarr: Array<object>;
+        label: string;
     },
     {
       selectedItem?: { key: string | number | undefined };
@@ -29,8 +30,7 @@ import * as React from 'react';
       return (
           <Dropdown
             placeholder="Select an Option"
-            label="Basic uncontrolled example:"
-            ariaLabel="Basic dropdown example"
+            label={this.props.label}
             options={arr}
           />
       );
@@ -41,8 +41,9 @@ import * as React from 'react';
     public create_array(arr: Array<object>){
       var arr: Array<object>;
       for (let i = 0; i < arr.length; i++) {
-        arr[i]={key: i, text: arr[i]};
+        arr[i]={key: i, text: arr[i]}; //rellena las opciones con los campos del json
       }
+
       return arr;
     }
   

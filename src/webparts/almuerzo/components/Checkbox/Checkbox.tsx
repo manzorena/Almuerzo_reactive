@@ -1,21 +1,14 @@
 import * as React from 'react';
 import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 
-export interface ICheckboxBasicExampleState {
-  isChecked: boolean;
-}
 
-export default class CheckboxBasicExample extends React.Component<{}, ICheckboxBasicExampleState> {
-  constructor(props: {}) {
-    super(props);
+class Checkbox_ extends React.Component<{label: string}, {}> {
 
-    this._onCheckboxChange = this._onCheckboxChange.bind(this);
-  }
 
-  public render(): JSX.Element {
+  public render(){
     return (
       <div>
-        <Checkbox label="Standard checkbox" onChange={this._onCheckboxChange} />
+        <Checkbox label={this.props.label} onChange={this._onCheckboxChange}/>
       </div>
     );
   }
@@ -24,3 +17,4 @@ export default class CheckboxBasicExample extends React.Component<{}, ICheckboxB
     console.log(`The option has been changed to ${isChecked}.`);
   }
 }
+export default Checkbox_;

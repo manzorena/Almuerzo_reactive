@@ -5,6 +5,7 @@ import * as React from 'react';
   class selector extends React.Component<
     {
         menuarr: Array<object>;
+        label: string;
     },
     {
       selectedItem?: { key: string | number | undefined };
@@ -29,7 +30,7 @@ import * as React from 'react';
       return (
           <Dropdown
             placeholder="Select an Option"
-            label="Basic uncontrolled example:"
+            label={this.props.label}
             ariaLabel="Basic dropdown example"
             options={arr}
           />
