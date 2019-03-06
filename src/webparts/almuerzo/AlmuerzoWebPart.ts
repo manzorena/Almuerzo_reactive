@@ -15,6 +15,8 @@ export interface IAlmuerzoWebPartProps {
   description: string;
 }
 
+
+
 export default class AlmuerzoWebPart extends BaseClientSideWebPart<IAlmuerzoWebPartProps> {
 
   public render(): void {
@@ -57,4 +59,5 @@ export default class AlmuerzoWebPart extends BaseClientSideWebPart<IAlmuerzoWebP
       ]
     };
   }
+
 }
