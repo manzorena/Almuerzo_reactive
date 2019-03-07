@@ -104,7 +104,7 @@
         {
             "Menu":"Milanesas vegetarianas",
 
-            "Props":["Tipo","Guarnición","Grillada"],
+            "Props":["Tipo","Guarnición","Gratinada"],
             "Tipo":[
                     "Arveja",
                     "Calabaza",
@@ -120,7 +120,7 @@
                         "Puré de papa",
                         "Puré mixto"
                     ],
-            "Grillada":[0,1]
+            "Gratinada":[0,1]
         },
 
         {
@@ -146,13 +146,14 @@
                     "Ravioles",
                     "Tallarines"
                     ],
-            "Guarnición":[
-                        "Tuco",
-                        "Blanca",
-                        "Mixta",
-                        "Bolognesa",
-                        "4 quesos"]
+            "Salsa":[
+                    "Tuco",
+                    "Blanca",
+                    "Mixta",
+                    "Bolognesa",
+                    "4 quesos"]
         },
+
         {
             "Menu":"Menu del día",
             "Props":""
