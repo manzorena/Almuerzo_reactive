@@ -7,7 +7,7 @@ import Selector from '../Selector/Selector';
 import Selector_menu from '../Selector/Selector_menu';
 import _Checkbox from '../Checkbox/Checkbox';
 import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
-import Gustos from '../Gustos/Gustos';
+import Rowgustos from '../Gustos/Gustos';
 import Checkbox_ from '../Checkbox/Checkbox';
 import { HtmlAttributes } from '../../../../../node_modules/csstype';
 
@@ -27,7 +27,6 @@ class Order extends React.Component<{},{}> {
 
     render() {
         
-        var hola = <Checkbox_ label="asd"/>
         return(
             <div>
                 <div id="Menu_principal" onFocus={a => this.showme(a)}>
@@ -35,7 +34,6 @@ class Order extends React.Component<{},{}> {
                 </div>
 
                 <div id="hidden">
-
                     <div id={Menus[0]["Menu"]} className={styles.hidden}>
                         <Selector label="Tipo"       menuarr={Menus[0]["Tipo"]}/>
                         <Selector label="Guarnición" menuarr={Menus[0]["Guarnición"]}/>
@@ -43,7 +41,7 @@ class Order extends React.Component<{},{}> {
 
                     <div id={Menus[1]["Menu"]} className={styles.hidden}>
                         <Selector label="Gusto especial" menuarr={Menus[1]["Gusto especial"]}/>
-                        <Gustos  gustos={Menus[1]["Gustos"]}/>
+                        <Rowgustos  gustos={Menus[1]["Gustos"]}/>
                     </div>
 
                     <div id={Menus[2]["Menu"]} className={styles.hidden}>
@@ -109,6 +107,7 @@ class Order extends React.Component<{},{}> {
             var element = (document.getElementById(Menus[i].text))
             if (element.id == menu_name) {
                 element.style.display = "block"
+                
             }
             else{
                 element.style.display = "none"
