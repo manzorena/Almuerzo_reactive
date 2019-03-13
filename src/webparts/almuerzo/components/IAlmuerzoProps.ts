@@ -1,3 +1,4 @@
 export interface IAlmuerzoProps {
-  description: string;
+  image_url_arr: string[];
+  menu_legend_arr: string[];
 }

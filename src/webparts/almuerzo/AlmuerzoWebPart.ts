@@ -15,15 +15,19 @@ export interface IAlmuerzoWebPartProps {
   description: string;
 }
 
-
+let arr = [];
+let arr2 = [];
 
 export default class AlmuerzoWebPart extends BaseClientSideWebPart<IAlmuerzoWebPartProps> {
+
+  
 
   public render(): void {
     const element: React.ReactElement<IAlmuerzoProps > = React.createElement(
       Almuerzo,
       {
-        description: this.properties.description
+        image_url_arr: arr,
+        menu_legend_arr: arr2
       }
     );
 
