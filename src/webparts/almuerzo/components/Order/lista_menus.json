@@ -25,8 +25,8 @@
         {
             "Menu": "Ensalada para armar",
             "Props": [
-                "Gustos",
-                "Gusto especial"
+                "Gusto especial",
+                "Gustos"
             ],
             "MAX": 3,
             "Gustos": [
@@ -44,7 +44,7 @@
                 "Repollo",
                 "Rúcula",
                 "Tomate",
-                "Zanahoria",
+                "Zanahoria"
             ],
             "Gusto especial": [
                 "Atún",
@@ -177,7 +177,7 @@
         },
         {
             "Menu": "Menu del día",
-            "Props": ""
+            "Props": []
         }
     ],
     "oficinas": [
