@@ -12,27 +12,28 @@ import Almuerzo from './components/Almuerzo';
 import { IAlmuerzoProps } from './components/IAlmuerzoProps';
 
 export interface IAlmuerzoWebPartProps {
-  description: string;
+  context: any;
 }
 
-let arr = [];
-let arr2 = [];
+
 
 export default class AlmuerzoWebPart extends BaseClientSideWebPart<IAlmuerzoWebPartProps> {
 
-  
-
   public render(): void {
+    
     const element: React.ReactElement<IAlmuerzoProps > = React.createElement(
       Almuerzo,
       {
-        image_url_arr: arr,
-        menu_legend_arr: arr2
+        context: this.context
       }
     );
-
+  
     ReactDom.render(element, this.domElement);
+  
   }
+
+
+  
 
   protected onDispose(): void {
     ReactDom.unmountComponentAtNode(this.domElement);

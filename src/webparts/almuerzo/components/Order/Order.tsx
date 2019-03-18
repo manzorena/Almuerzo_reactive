@@ -6,23 +6,20 @@ import Selector from '../Selector/Selector';
 import Selector_menu from '../Selector/Selector_menu';
 import Rowgustos from '../Gustos/Gustos';
 import Checkbox_ from '../Checkbox/Checkbox';
+import data from './lista_menus';
+import * as webpack from 'webpack'
 
 //importa el archivo json con todos los datos de las comidas
-var menujson = require('./lista_menus.json');
-
-var Menus = menujson["menus"];
-var Oficinas = menujson["oficinas"];
-
-
-
-
 
 
 
 class Order extends React.Component<{},{}> {
 
+
     render() {
-    
+
+        let Menus = this.inmutable(data["menus"])
+        let Oficinas = this.inmutable(data["oficinas"])
 
         return(
             <div>
@@ -31,7 +28,6 @@ class Order extends React.Component<{},{}> {
                 </div>
 
                 <div id="hidden">
-                    {console.log("antes de menu")}
                     {Menus.map((el,index)=>
 
                     <div id={el["Menu"]} className={styles.hidden}> 
@@ -51,6 +47,7 @@ class Order extends React.Component<{},{}> {
 
     public create_options(obj){
         {console.log("en create options")}
+        
         let output= [];
 
         obj["Props"].map((el,i)=>
@@ -69,16 +66,16 @@ class Order extends React.Component<{},{}> {
                 break;           
         }}
     )
-        console.log(output);
         
         return output;
     }
 
-
+    public inmutable(a:object){
+       return JSON.parse(JSON.stringify(a));
+    }
 
     private _log(str: string): () => void {
         return (): void => {
-          console.log(str);
         };
       }
 
@@ -86,14 +83,12 @@ class Order extends React.Component<{},{}> {
       
     
     public showme(a){
-        var menu_princ = (document.getElementById("Menu_principal"));
-        var menu_name = (menu_princ.getElementsByTagName("span")[0].innerText);//obtiene el nombre del menu seleccionado
-        
+        let menu_princ = (document.getElementById("Menu_principal"));
+        let menu_name = (menu_princ.getElementsByTagName("span")[0].innerText);//obtiene el nombre del menu seleccionado
 
+        for (let i = 0; i < data.menus.length; i++) {
 
-        for (let i = 0; i < Menus.length; i++) {
-
-            var element = (document.getElementById(Menus[i].text))
+            let element = (document.getElementById(data.menus[i]["Menu"]))
             if (element.id == menu_name) {
                 element.style.display = "block"
                 

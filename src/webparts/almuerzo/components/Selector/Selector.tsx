@@ -4,7 +4,7 @@ import * as React from 'react';
   
   class selector extends React.Component<
     {
-        menuarr: Array<object>;
+        menuarr: Array<string>;
         label: string;
     },
     {
@@ -26,7 +26,7 @@ import * as React from 'react';
   
     public render() {
       const { selectedItem, selectedItems } = this.state;
-      var arr = this.create_array(this.props.menuarr);
+      let arr = this.create_array(this.props.menuarr);
       return (
           <Dropdown
             placeholder="Select an Option"
@@ -38,13 +38,13 @@ import * as React from 'react';
 
 
 
-    public create_array(arr: Array<object>){
-      var arr: Array<object>;
-      for (let i = 0; i < arr.length; i++) {
-        arr[i]={key: i, text: arr[i]}; //rellena las opciones con los campos del json
+    public create_array(arr_: Array<string>){
+      let output = [];
+      for (let i = 0; i < arr_.length; i++) {
+        output[i]={key: i, text: arr_[i]}; //rellena las opciones con los campos del json
       }
 
-      return arr;
+      return output;
     }
   
 
