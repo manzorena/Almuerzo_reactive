@@ -1,4 +1,47 @@
 @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Cardo:400italic');
+
+.sandbox-correct-pronounciation {
+  padding: 3em 0 3em 0;
+}
+
+.heading-correct-pronounciation {
+
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+
+
+.titulo {
+  color: #fff;
+  font-family: 'EB Garamond', serif;
+  font-size: 2.3em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  font-style:normal;
+  padding-top: 0.1em;
+  text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.2);
+  
+  &::before, &::after {
+  content: "§";
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+	opacity: 0.3;
+  margin: 0 0.6em;
+  font-size: 0.5em;
+}
+
+}
+
 
 .almuerzo {
   .container {

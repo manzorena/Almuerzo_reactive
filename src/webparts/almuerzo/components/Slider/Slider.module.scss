@@ -11,8 +11,19 @@ padding-top: 15px;
 margin-left: auto;
 margin-right: auto;
 }
-
-.crop {
-    height: 300;
-    width: 400;
-}
+.dia{
+    position: absolute;
+    color: #fff;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.2);
+    top: 0;
+    right: 40%;
+    font-family: 'Cardo', serif;
+    font-size: 1.8em;
+    font-weight: normal;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    line-height: 2.2em;
+  }

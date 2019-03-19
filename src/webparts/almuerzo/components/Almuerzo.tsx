@@ -42,6 +42,13 @@ export default class Almuerzo extends React.Component<IAlmuerzoProps, IAlmuerzoS
 
     return (
       <div className={ styles.almuerzo }>
+      
+        <div className={styles["sandbox-correct-pronounciation"]}>
+            <h1 className={styles["heading-correct-pronounciation"]}>
+              <em className={styles.titulo}>Menús del día</em>
+            </h1>
+        </div>
+
         <Slider data={this.state.data}/>
         <Order/>
       </div>
@@ -85,62 +92,6 @@ export default class Almuerzo extends React.Component<IAlmuerzoProps, IAlmuerzoS
   }
 
 
-  // public getMenues(): Promise<any> {
-  //   console.log("entra");
-  //   return new Promise<any>((resolve: (results: any) => void, reject: (error: any) => void): void => {
-  //     var day = this.getDayOfWeek();
-  //     console.log("antes de llamar");
-  //     this.props.context.spHttpClient.get(`https://mstech720.sharepoint.com/sites/Dev/_api/Web/lists/GetByTitle('Lista-Menu')/items?`,
-  //     SPHttpClient.configurations.v1,
-  //     httpClientOptions
-  //     )
-  //     .then(
-  //       (response: any) => {
-  //         console.log("llamo correctamente");
-  //           if (response.status >= 200 && response.status < 300) {
-  //             return response.json();
-  //           } else {
-  //                return Promise.reject(new Error(JSON.stringify(response)));
-                
-  //           }
-  //       })
-  //       .then((data: any) => {
-
-  //         let arr=[];
-  //         let arr2=[];
-
-  //         console.log("encontro datos");
-  //         var htmlDailyMenu = "";      
-  //         if (data.value.length > 0) {
-  //           data.value.forEach((element) => {
-  //             console.log(element);
-  //             console.log("antes de llenar las variables");
-  
-  //             if(element.DiaSemana=='Lunes')     {arr[0] = element.imagen.Url ;arr2[0] = element.Title;}
-  //        else if(element.DiaSemana=='Martes')    {arr[1] = element.imagen.Url ;arr2[1] = element.Title;}
-  //        else if(element.DiaSemana=='Miercoles') {arr[2] = element.imagen.Url ;arr2[2] = element.Title;}
-  //        else if(element.DiaSemana=='Jueves')    {arr[3] = element.imagen.Url ;arr2[3] = element.Title;}
-  //        else if(element.DiaSemana=='Viernes')   {arr[4] = element.imagen.Url ;arr2[4] = element.Title;}
-              
-  
-  //             console.log("variables llenas");
-  
-  //           });
-  //         }
-  //         else {
-          
-  //           //completar el else
-  //           console.log("no hay menus para la semana");
-  
-  //         } 
-  //       })
-  //       .catch((ex) => {
-  //         console.log("SUPERERROR");
-  //         console.log("readDocumentsFromLibrary > spHttpClient.get()...catch:", ex);
-  //         throw ex;
-  //       });
-  //   });
-  // }
 
   public getDayOfWeek() {
     switch(moment().format('dddd')) {
