@@ -21,13 +21,6 @@ export default{
                 "Puré de calabaza",
                 "Puré de papa",
                 "Puré mixto"
-            ]
-        },
-        {
-            "Menu": "Ensalada para armar",
-            "Props": [
-                "Gusto especial",
-                "Gustos"
             ],
             "MAX": 3,
             "Gustos": [
@@ -46,6 +39,32 @@ export default{
                 "Rúcula",
                 "Tomate",
                 "Zanahoria"
+            ],
+        },
+        {
+            "Menu": "Ensalada para armar",
+            "Props": [
+                "Gusto especial",
+                "Gustos"
+            ],
+            "MAX": 5,
+            "Gustos": [
+                "Apio",
+                "Arroz",
+                "Arroz integral",
+                "Arvejas",
+                "Calabaza",
+                "Huevo",
+                "Lechuga",
+                "Lentejas",
+                "Papa",
+                "Radicheta",
+                "Remolacha",
+                "Repollo",
+                "Rúcula",
+                "Tomate",
+                "Zanahoria",
+                "Cebolla"
             ],
             "Gusto especial": [
                 "Atún",

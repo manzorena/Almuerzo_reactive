@@ -3,7 +3,6 @@ import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 import styles from './Gustos.module.scss';
 
 //Maxima cantidad de gustos seleccionables
-var MAX = require('../Order/lista_menus.json')["menus"][1]["MAX"];
 
 
 export interface ICheckboxParent { //estados de Rowgustos
@@ -17,7 +16,7 @@ export interface ICheckboxChildren { //estados de Gustos
 
 
 //componente que va a retornar una tabla de checkboxes
-class Rowgustos extends React.Component<{ gustos: Array<string> }, ICheckboxParent>{
+class Rowgustos extends React.Component<{ gustos: Array<string>,MAX: number}, ICheckboxParent>{
   public state: ICheckboxParent = {
     cantChecked: [0,0,0]
   };
@@ -36,7 +35,7 @@ class Rowgustos extends React.Component<{ gustos: Array<string> }, ICheckboxPare
                       key_={i-1} //propiedades
                       gustos={gustos_}
                       update={this.update_state.bind(this)} 
-                      disabled={this._toDisable()} />);
+                      disabled={this._toDisable()} />)
     }
 
 
@@ -66,7 +65,7 @@ class Rowgustos extends React.Component<{ gustos: Array<string> }, ICheckboxPare
       total_checks+=this.state.cantChecked[i];
     }
 
-    if (total_checks >= MAX) { //si seleccionan mas de MAX checkboxes retorna true
+    if (total_checks >= this.props.MAX) { //si seleccionan mas de MAX checkboxes retorna true
       return true
     }
     else{ 

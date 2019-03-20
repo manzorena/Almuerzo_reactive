@@ -8,6 +8,7 @@ import Rowgustos from '../Gustos/Gustos';
 import Checkbox_ from '../Checkbox/Checkbox';
 import data from './lista_menus';
 import * as webpack from 'webpack'
+import { max } from '../../../../../node_modules/moment';
 
 //importa el archivo json con todos los datos de las comidas
 
@@ -22,7 +23,7 @@ class Order extends React.Component<{},{}> {
         let Oficinas = this.inmutable(data["oficinas"])
 
         return(
-            <div>
+            <div className={styles.container}>
                 <div id="Menu_principal" onFocus={a => this.showme(a)}>
                 <Selector_menu label="Menú" menuarr={Menus}/>
                 </div>
@@ -46,7 +47,6 @@ class Order extends React.Component<{},{}> {
 
 
     public create_options(obj){
-        {console.log("en create options")}
         
         let output= [];
 
@@ -54,7 +54,7 @@ class Order extends React.Component<{},{}> {
         {switch (el) {
 
             case "Gustos":
-                output[i] = <Rowgustos  gustos={obj[el]}/>
+                output[i] = <Rowgustos  gustos={obj[el]} MAX={obj.MAX}/>
                 break;
                 
             case "Gratinada":

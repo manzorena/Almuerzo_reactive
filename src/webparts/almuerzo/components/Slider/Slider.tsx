@@ -22,16 +22,16 @@ export default class Slider extends Component<ISliderProps, ISliderState> {
     render() {
         let url_arr = this.props.data.map(el => el.imagen.Url);
         let legend_arr = this.props.data.map(el => el.Title);
-        
-        console.log(url_arr);
-        console.log(legend_arr);
+        let num = 0;
 
-        <h4 className={styles.dia}>{legend_arr[this.state.page]}</h4>
 
         if (legend_arr.length > 0) {
             return (
                 <div className={styles.carousel_div}>
-                    <Carousel infiniteLoop={true} className={styles.carousel} autoPlay={true} dynamicHeight={false} onChange={(ev)=>this.show_day(ev)}>
+
+                <h4 className={styles.dia}>{this.props.data[this.state.page].DiaSemana}</h4>
+
+                    <Carousel infiniteLoop={true} className={styles.carousel} autoPlay={true} selectedItem={this.state.page} dynamicHeight={true} onChange={(ev)=>this.setState({page: ev})}>          
                         {this.dynamic_slider(url_arr, legend_arr)}
                     </Carousel>
                 </div>
@@ -44,10 +44,6 @@ export default class Slider extends Component<ISliderProps, ISliderState> {
                 </div>
             );
         }
-    }
-
-    public show_day(ev){
-        
     }
 
     public dynamic_slider(url_arr: string[], legend_arr: string[]) {

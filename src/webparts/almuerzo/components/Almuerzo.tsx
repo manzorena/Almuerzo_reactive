@@ -37,20 +37,21 @@ export default class Almuerzo extends React.Component<IAlmuerzoProps, IAlmuerzoS
 };
 
   public render(): React.ReactElement<IAlmuerzoProps> {
-    
+
     () => this.componentDidMount();
 
     return (
       <div className={ styles.almuerzo }>
-      
-        <div className={styles["sandbox-correct-pronounciation"]}>
-            <h1 className={styles["heading-correct-pronounciation"]}>
-              <em className={styles.titulo}>Menús del día</em>
-            </h1>
-        </div>
+        <div className={styles.cont1}>
+          <div className={styles["sandbox-correct-pronounciation"]}>
+              <h1 className={styles["heading-correct-pronounciation"]}>
+                <em className={styles.titulo}>Menús del día</em>
+              </h1>
+          </div>
 
-        <Slider data={this.state.data}/>
-        <Order/>
+          <Slider data={this.state.data}/>
+          <Order/>
+        </div>
       </div>
     );
   }
@@ -62,7 +63,6 @@ export default class Almuerzo extends React.Component<IAlmuerzoProps, IAlmuerzoS
     try{
       const res = await axios.get(`https://mstech720.sharepoint.com/sites/Dev/_api/Web/lists/GetByTitle('Lista-Menu')/items?`)
       const data = res.data.value
-      console.log(data);
 
         this.setState({
           data,
