@@ -41,9 +41,12 @@ class Rowgustos extends React.Component<{ gustos: Array<string>,MAX: number}, IC
 
     //retorna una tabla con el componente
     return (
-      <table className={styles.output} id="tabla">
-          {rows}
-      </table>
+      <div>
+        <p>gustos restantes: {this.props.MAX - this.checks()}</p>
+        <table className={styles.output} id="tabla">
+            {rows}
+        </table>
+      </div>
     );
   }
 
@@ -55,6 +58,14 @@ class Rowgustos extends React.Component<{ gustos: Array<string>,MAX: number}, IC
     new_cantChecked[index] = num;
 
       this.setState({cantChecked: new_cantChecked});
+  }
+
+  public checks(){
+    let total = 0;
+    for (let i = 0; i < this.state.cantChecked.length; i++) {
+      total += this.state.cantChecked[i];
+    }
+    return total;
   }
 
   //le indica al componente Gustos que los checkboxes deben ser desabilitados

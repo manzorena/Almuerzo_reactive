@@ -40,7 +40,7 @@ class Order extends React.Component<{},{}> {
                 <Selector label="Enviar pedido a" menuarr={Oficinas}/>
                 </div>
 
-                <ActionButton>BOTON</ActionButton>
+                {/* <ActionButton>BOTON</ActionButton> */}
             </div>
         )
     }

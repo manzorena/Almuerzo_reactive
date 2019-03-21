@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Cardo:400italic');
+
 .carousel{
     position: relative;
     z-index: 10;
@@ -6,19 +8,37 @@
 .carousel_div{
 position: relative;
 width: 70%;
-height: 420px;
+max-width: 500px;
 padding-top: 15px;
 margin-left: auto;
 margin-right: auto;
 }
+
+.hoy{
+    position: absolute;
+    color: rgb(95, 95, 95);
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.2);
+    top: -26px;
+    right: 43%;
+    font-family: 'EB Garamond', serif;
+    font-size: 2.6em;
+    font-weight: normal;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: oblique;
+    letter-spacing: 0.1em;
+    line-height: 1em;
+}
+
 .dia{
     position: absolute;
-    color: #fff;
+    color: rgb(95, 95, 95);
     text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.2);
     top: -80px;
     right: 40%;
     font-family: 'Cardo', serif;
-    font-size: 1.8em;
+    font-size: 2.2em;
     font-weight: normal;
     text-align: center;
     margin-left: auto;
