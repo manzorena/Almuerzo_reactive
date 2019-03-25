@@ -13,7 +13,13 @@ padding-top: 15px;
 margin-left: auto;
 margin-right: auto;
 }
-
+.imagen_container{
+color: aliceblue;
+}
+.imagen{
+    background-position: center;
+    background-size: cover;
+}
 .hoy{
     position: absolute;
     color: rgb(95, 95, 95);

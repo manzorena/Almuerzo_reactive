@@ -23,6 +23,7 @@
     "moment": "^2.24.0",
     "node-fetch": "^2.3.0",
     "react": "16.3.2",
+    "react-aspect-ratio": "^1.0.40",
     "react-dom": "16.3.2",
     "react-native-fit-image": "^1.5.4",
     "react-responsive-carousel": "^3.1.47"

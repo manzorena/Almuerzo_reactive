@@ -3,11 +3,14 @@ import { BaseComponent, DATA_IS_SCROLLABLE_ATTRIBUTE } from 'office-ui-fabric-re
 import * as React from 'react';
 import Rowgustos from '../Gustos/Gustos';
 import data from '../Order/lista_menus';
+
+export type SelectorCallback = (item: any) => void;
   
   class selector extends React.Component<
     {
         menuarr: Array<string>;
         label: string;
+        onChange: SelectorCallback;
     },
     {
       selectedItem?: any;
@@ -30,7 +33,7 @@ import data from '../Order/lista_menus';
       return (
         <div>
           <Dropdown
-            onChanged={(opt, i) => this.setState({selectedItem: opt})}
+            onChanged={(opt, i) => this.handleChange(opt,[])}
             placeholder="Select an Option"
             label={this.props.label}
             options={arr}
@@ -43,7 +46,7 @@ import data from '../Order/lista_menus';
     public ensalada(){
     if(this.state.selectedItem != undefined){
       if(this.state.selectedItem.text == "Ensalada"){
-        return <Rowgustos gustos={data.menus[0]["Gustos"]} MAX={data.menus[0]["MAX"]}/> 
+        return <Rowgustos gustos={data.menus[0]["Gustos"]} MAX={data.menus[0]["MAX"]} onChange={(ens)=>this.handleChange(this.state.selectedItem,ens)}/>
       }
       else{
         return <div/>
@@ -51,6 +54,19 @@ import data from '../Order/lista_menus';
       
     }
   }
+
+    public handleChange(opt, ensalada){
+      if (opt.text == "Ensalada"){
+        this.setState({selectedItem: opt})
+        let output = {key: opt["key"], text: opt["text"], gustos: ensalada}
+
+        this.props.onChange(output)
+      }
+      else{
+        this.setState({selectedItem: opt})
+        this.props.onChange(opt)
+      }
+    }
 
     public create_array(arr_: Array<string>){
       let output = [];
