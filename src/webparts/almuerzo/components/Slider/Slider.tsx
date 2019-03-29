@@ -50,7 +50,7 @@ export default class Slider extends Component<ISliderProps, ISliderState> {
 
                     {this.diaSemana()}
 
-                    <Carousel infiniteLoop={true} className={styles.carousel} autoPlay={true} selectedItem={this.state.page} dynamicHeight={false} onChange={(ev) => this.setState({ page: ev })}>
+                    <Carousel infiniteLoop={true} interval={2500} className={styles.carousel} autoPlay={true} selectedItem={this.state.page} dynamicHeight={false} onChange={(ev) => this.setState({ page: ev })}>
                         {this.dynamic_slider(url_arr, legend_arr)}
                     </Carousel>
                 </div>
